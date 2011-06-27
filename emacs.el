@@ -4,6 +4,11 @@
 ;; Add ~/.emacs.d to load-path
 (add-to-list 'load-path "~/.emacs.d")
 
+;; Auto Complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(ac-config-default)
+
 ;; Use wombat theme
 (require 'color-theme-wombat)
 (color-theme-wombat)
@@ -22,3 +27,19 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq tab-width 2)
+
+;; Cucumber mode
+(add-to-list 'load-path "~/.emacs.d/feature-mode")
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; HAML & SASS mode
+(require 'haml-mode)
+(add-to-list 'auto-mode-alist '("\.haml$" . haml-mode))
+(require 'sass-mode)
+(add-to-list 'auto-mode-alist '("\.scss$" . sass-mode))
+
+;; Coffeescript mode
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
