@@ -19,6 +19,9 @@
 (tool-bar-mode -1)
 (setq inhibit-startup-message 0)
 
+;; Use column-number-mode
+(setq column-number-mode t)
+
 ;; Stop making backup files and save files
 (setq make-backup-files         nil) 
 (setq auto-save-list-file-name  nil)
