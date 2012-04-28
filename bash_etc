@@ -1,0 +1,3 @@
+alias be='bundle exec'
+CLOJURE_JAR_PATH='/home/rohit/clojure/clojure-1.3.0.jar'
+alias clj='java -jar $CLOJURE_JAR_PATH'
