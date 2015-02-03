@@ -11,5 +11,6 @@ PATH=$PATH:/usr/racket/
 PATH=$PATH:/usr/racket/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$HOME/local/bin:$PATH # Allow local bin to override system
+PATH=$PATH:$HOME/node-latest/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
