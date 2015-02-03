@@ -1,0 +1,36 @@
+# To use this config file copy it to $HOME as .bashrc_source and add
+# following line at the end to $HOME/.bashrc:
+# source "$HOME/.bashrc_source"
+
+LANG=en_US.UTF-8
+TERM=xterm-256color
+
+################
+# Begin Prompt #
+################
+RVM_PROMPT="\e[1;30m(\e[m\e[0;32m\$(rvm-prompt v p g)\e[m\e[1;30m)\e[m"
+DIRECTORY="\e[1;30m(\e[m\e[1;34m\w\e[m\e[1;30m)\e[m"
+PROMPT_SYM="λ "
+
+# Function to show branch and dirty status,
+# http://henrik.nyh.se/2008/12/git-dirty-prompt
+# http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "⚡"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+PS1="\e[1;30m[\e[m\e[0;36m\$(parse_git_branch)\e[m\e[1;30m]\e[m$RVM_PROMPT $DIRECTORY\n$PROMPT_SYM"
+
+##############
+# End Prompt #
+##############
+
+#################
+# Begin Aliases #
+#################
+alias be='bundle exec'
+alias h='heroku'
+alias e='emacs -nw'
