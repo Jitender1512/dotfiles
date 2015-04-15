@@ -4,6 +4,7 @@
 
 LANG=en_US.UTF-8
 TERM=xterm-256color
+eval `dircolors .dir_colors`
 
 ################
 # Begin Prompt #
@@ -34,3 +35,4 @@ PS1="\e[1;30m[\e[m\e[0;36m\$(parse_git_branch)\e[m\e[1;30m]\e[m$RVM_PROMPT $DIRE
 alias be='bundle exec'
 alias h='heroku'
 alias e='emacs -nw'
+alias www='python -m SimpleHTTPServer'
